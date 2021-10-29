@@ -34,8 +34,8 @@ variable "pubkey" {
    default = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCd/IZkaLQdSEHjoEMvvE7b65CV+FsJc9gFcublKSyzWgFM3aJIkCEo58v7KCL1c2GyU3k4IRppl4ZGJy28oOoQQol4ai9r39XUjGI1BGQclB9SHMWa9g33L9v2vKGBd4h/8fAFbw2pJgODXuo5pHmiAwVJtomKgc4C2TVdKsaSaysosztRUd/Y5bsSnvYE1gmDdSL4/vSj98r+5oeJ8btPQQdlwFdgf7Zy561hY2Ho7gDdioCIl1ZJeGgijTcQrp/BVK+tGT8HPK6PKMNG7dvGxBkQmPD5JvSn8UiDzxRDUOHp0Zq8RSrWuzs/6oMQjc1oCNFlZ/h9y/EbYm4pOnsd root@ip-172-31-30-163.ec2.internal"
 
 resource "aws_instance" "myservers" {
-   ami = ${ var.environment == "prod" ? var.ami_id_redhat : var.ami_id_ubuntu }
-   instance_type = ${ var.environment == "prod" ? var.it_redhat : var.it_ubuntu }
+   ami = "${ var.environment == "prod" ? var.ami_id_redhat : var.ami_id_ubuntu }"
+   instance_type = "${ var.environment == "prod" ? var.it_redhat : var.it_ubuntu }"
    key_name = aws_key_pair.mykeypair.key_name
   
 

@@ -40,7 +40,7 @@ resource "aws_instance" "myservers" {
   
 
    tags = {
-      Name = ${var.server}-28oct
+      Name = "${var.server}-28oct"
       env = "test"
    }
 }

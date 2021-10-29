@@ -52,15 +52,9 @@ resource "aws_key_pair" "mykeypair" {
 
 
 output "Public_IP" {
-  value = {
-    for instance in aws_instance.myservers:
-      instance.id => instance.public_ip
-  }
+   value = aws_instance.myservers.public_ip
 }
 
 output "Private_IP" {
-  value = {
-    for instance in aws_instance.myservers:
-      instance.id => instance.private_ip
-  }
+   value = aws_instance.myservers.private_ip
 }
